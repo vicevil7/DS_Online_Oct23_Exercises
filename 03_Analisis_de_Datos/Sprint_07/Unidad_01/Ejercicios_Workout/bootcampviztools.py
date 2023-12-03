@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 
 
-def pinta_distribucion_categoricas(df, columnas_categoricas, relativa=False, mostrar_valores=False):
+def pinta_distribucion_categoricas(df, columnas_categoricas, relativa=False, mostrar_valores=False, giro = 45):
     num_columnas = len(columnas_categoricas)
     num_filas = (num_columnas // 2) + (num_columnas % 2)
 
@@ -25,7 +25,7 @@ def pinta_distribucion_categoricas(df, columnas_categoricas, relativa=False, mos
 
         ax.set_title(f'Distribución de {col}')
         ax.set_xlabel('')
-        ax.tick_params(axis='x', rotation=45)
+        ax.tick_params(axis='x', rotation=giro)
 
         if mostrar_valores:
             for p in ax.patches:
